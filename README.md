@@ -24,6 +24,7 @@ This repository contains the complete laboratory curriculum for the **Java & Spr
 10. [MySQL Database Setup Scripts](#mysql-database-setup-scripts)
 11. [Quick Viva Cheat Sheet](#quick-viva-cheat-sheet)
 12. [Troubleshooting & Common Errors](#troubleshooting--common-errors)
+13. [Servlet & JSP Walkthrough (Eclipse, Tomcat & HTTP 500 Debugging)](./WALKTHROUGH.md)
 
 ---
 

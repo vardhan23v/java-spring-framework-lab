@@ -40,10 +40,10 @@ Implement a Java Servlet (`SimpleServlet`) that handles both **HTTP GET** and **
 2. Right-click `src` -> **New -> Class**.
 3. Fill in the class creation wizard:
    - **Package:** `com.example`
-   - **Name:** `SimpleServlet`
+   - **Name:** `SimpleServlet` (or `MyServlet`)
    - **Superclass:** `javax.servlet.http.HttpServlet`
 4. Click **Finish**.
-5. Copy and paste the code from [`SimpleServlet.java`](./SimpleServlet.java) into this newly created file.
+5. Copy and paste the code from [`SimpleServlet.java`](./SimpleServlet.java) or [`MyServlet.java`](./MyServlet.java) into this newly created file.
 6. Press `Ctrl + S` (or `Cmd + S` on Mac) to save. Eclipse will automatically compile the class.
 
 ---
