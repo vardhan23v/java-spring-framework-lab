@@ -38,7 +38,7 @@ Before running the programs, ensure your system has the following components ins
 | **Eclipse IDE** | 2022-09+ | **Eclipse IDE for Enterprise Java and Web Developers** | [Eclipse Downloads](https://www.eclipse.org/downloads/packages/) |
 | **Apache Tomcat** | Tomcat 9.0 | **Tomcat 9.0.x** (for `javax.servlet`) or **Tomcat 10.1.x** (for `jakarta.servlet`) | [Apache Tomcat](https://tomcat.apache.org/) |
 | **MySQL Server** | MySQL 5.7 | **MySQL 8.0+ Community Server** | [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) |
-| **MySQL Connector/J** | 8.0.x | **mysql-connector-j-8.3.0.jar** | [MySQL Connector](https://dev.mysql.com/downloads/connector/j/) or Maven Central |
+| **MySQL Connector/J** | 8.0.x / 26.x | **mysql-connector-j-26.10.0.jar** | [MySQL Connector](https://dev.mysql.com/downloads/connector/j/) or Maven Central |
 | **Spring Tools 4** | Optional plugin | **Spring Tools 4 (STS)** for Eclipse | Eclipse Marketplace |
 | **Postman / curl** | Any | Latest | [Postman](https://www.postman.com/downloads/) or Terminal `curl` |
 
@@ -810,7 +810,7 @@ Develop a web application integrating **JavaServer Pages (JSP)** with **Java Dat
 | `java.sql` | `PreparedStatement`, `Statement` | Precompiled parameterized SQL statements preventing SQL Injection |
 | `java.sql` | `ResultSet` | Traverses tabular database query results |
 | `java.util` | `List`, `ArrayList` | Collections for transporting student objects across layers |
-| **External JAR** | `mysql-connector-j-8.3.0.jar` (bundled in repo root) | JDBC Driver for MySQL communication |
+| **External JAR** | `mysql-connector-j-26.10.0.jar` (in `mysql-connector-j-26.10.0/`) | JDBC Driver for MySQL communication |
 
 ---
 
@@ -1135,7 +1135,7 @@ public class StudentDAO {
      ```
 2. **Create Eclipse Project**:
    - **File -> New -> Dynamic Web Project** -> Name: `StudentCRUD`.
-   - Add MySQL Driver JAR (`mysql-connector-j-8.3.0.jar` from repository root) into `WebContent/WEB-INF/lib/`.
+   - Add MySQL Driver JAR (`mysql-connector-j-26.10.0.jar` from `mysql-connector-j-26.10.0/`) into `WebContent/WEB-INF/lib/`.
 3. **Add Java Package & Classes**:
    - Under `src`, create package `com.studentcrud`.
    - Add `DBConnection.java`, `Student.java`, and `StudentDAO.java`.
@@ -1886,7 +1886,7 @@ USE staffDB;
 - **Cause:** Using legacy MySQL 5.x driver class or missing MySQL Connector JAR file.
 - **Solution:**
   - For MySQL 8+, update the class name to `com.mysql.cj.jdbc.Driver`.
-  - For JSP/Servlet (Exp 3): Make sure `mysql-connector-j-8.3.0.jar` is copied into `WebContent/WEB-INF/lib/`.
+  - For JSP/Servlet (Exp 3): Make sure `mysql-connector-j-26.10.0.jar` is copied into `WebContent/WEB-INF/lib/`.
   - For Spring Boot (Exp 4 & 5): Ensure `com.mysql:mysql-connector-j` is present in `pom.xml`.
 
 ### 2. Port `8080` Already in Use
