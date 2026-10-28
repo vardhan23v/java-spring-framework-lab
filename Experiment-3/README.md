@@ -18,7 +18,7 @@ Develop a 3-tier web application integrating **JavaServer Pages (JSP)** with **J
 | `java.sql` | `PreparedStatement`, `Statement` | Precompiled parameterized SQL statements preventing SQL injection |
 | `java.sql` | `ResultSet`, `SQLException` | Tabular query results and SQL exception handling |
 | `java.util` | `List`, `ArrayList` | Collections for passing records between DAO and JSP |
-| **External JAR** | `mysql-connector-j-8.x.jar` | JDBC Driver JAR for MySQL communication |
+| **External JAR** | `mysql-connector-j-8.3.0.jar` (in repo root) | JDBC Driver JAR for MySQL communication |
 
 ---
 
@@ -53,13 +53,13 @@ INSERT INTO students (roll_no, name, email, age) VALUES
 3. **Target Runtime:** Select **Apache Tomcat v9.0** -> Click **Finish**.
 
 ### 2. Add MySQL Connector JAR
-1. Download `mysql-connector-j-8.x.jar` (or locate it in your `.m2` repository / downloads).
-2. Copy the `.jar` file.
-3. In Project Explorer, paste it into:
+1. Use the bundled `mysql-connector-j-8.3.0.jar` located directly in the root folder of this repository.
+2. In Eclipse Project Explorer, copy and paste `mysql-connector-j-8.3.0.jar` into:
    ```text
    StudentCRUD -> WebContent -> WEB-INF -> lib
    ```
-4. Right-click project -> **Build Path -> Configure Build Path...** -> Ensure the JAR is present under **Libraries**.
+   *(Note: Putting the JAR inside `WebContent/WEB-INF/lib` is essential for Tomcat runtime; it will automatically be included in Eclipse's Web App Libraries).*
+3. Verify: Right-click project -> **Build Path -> Configure Build Path...** -> Ensure the JAR is present under **Libraries**.
 
 ### 3. Create Java Classes in `com.studentcrud`
 1. Expand `StudentCRUD -> Java Resources -> src`.
